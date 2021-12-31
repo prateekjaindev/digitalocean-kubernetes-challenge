@@ -12,7 +12,7 @@ I ran the following command to get the nodes:
 
 ``` kubectl get nodes ```
 
-![1.png](images/1.png)
+![1.png](images/1.PNG)
 
 ## 2. Install Helm Chart
 
