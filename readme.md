@@ -56,7 +56,7 @@ After running the above command I waited for sometime and then ran the following
 
 # 4. Adding DNS record
 
-For accessing the registry over domain, I have added the IP of loadbalancer for my domain i.e. hub.prateekjain.dev
+For accessing the registry over domain, I have added the IP of loadbalancer for my domain i.e. https://hub.prateekjain.dev
 
 # 5. Login to the Harbor
 
