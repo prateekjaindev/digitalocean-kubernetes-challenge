@@ -10,7 +10,7 @@ After that I connected the cluster in my local machine so that I can start the H
 
 I ran the following command to get the nodes:
 
-``` kubectl get nodes
+``` kubectl get nodes ```
 
 ![1.png](images/1.png)
 
