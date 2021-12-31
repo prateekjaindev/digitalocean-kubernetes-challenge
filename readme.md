@@ -12,13 +12,13 @@ I ran the following command to get the nodes:
 
 ``` kubectl get nodes ```
 
-![1.png](images/1.PNG)
+![1.PNG](images/1.PNG)
 
 ## 2. Install Helm Chart
 
 ```helm repo add bitnami https://charts.bitnami.com/bitnami```
 
-![2.png](images/2.png)
+![2.PNG](images/2.PNG)
 I used bitnami helm charts for the installation, but before taht I created ```harbor-values.yaml``` with following values:
 
 ```
@@ -30,7 +30,7 @@ Other values I kept as it is.
 
 
 Now we are ready to install the chart. For that just run these commands:
-![3.png](images/3.png)
+![3.PNG](images/3.PNG)
 
 ## 3. Check the namespace, services and pods
 
@@ -40,19 +40,19 @@ After running the above command I waited for sometime and then ran the following
 
 ```kubectl get ns```
 
-![4.png](images/4.png)
+![4.PNG](images/4.PNG)
 
 ### Services:
 
 ```kubectl get svc```
 
-![5.png](images/5.png)
+![5.PNG](images/5.PNG)
 
 ### Pods:
 
 ```kubectl get pod```
 
-![6.png](images/6.png)
+![6.PNG](images/6.PNG)
 
 # 4. Adding DNS record
 
@@ -62,25 +62,25 @@ For accessing the registry over domain, I have added the IP of loadbalancer for 
 
 After the DNS propagation I went to my registry URL:
 
-![7.png](images/7.png)
+![7.PNG](images/7.PNG)
 
 I ran following commnad for getting the default password
 
 ``` kubectl get secret --namespace harbor harbor-core-envvars -o jsonpath="{.data.HARBOR_ADMIN_PASSWORD}" | base64 --decode ```
 
-![8.png](images/8.png)
+![8.PNG](images/8.PNG)
 
 # 6. Creating the Project
 
 I created a project for pushing the docker images
 
-![9.png](images/9.png)
+![9.PNG](images/9.PNG)
 
 # 7. Login to the registry
 
 ```sudo docker login hub.prateekjain.dev```
 
-![10.png](images/10.png)
+![10.PNG](images/10.PNG)
 
 # 8. Tagging and pushing the image to registry
 
@@ -90,4 +90,4 @@ sudo docker tag do-challenge:latest hub.prateekjain.dev/do-challenge/do-challeng
 sudo docker push hub.prateekjain.dev/do-challenge/do-challenge:latest 
 ```
 
-![11.png](images/11.png)
+![11.PNG](images/11.PNG)
