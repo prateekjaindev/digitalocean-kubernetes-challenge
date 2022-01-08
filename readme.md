@@ -1,16 +1,20 @@
 # Harbor Docker Registry in Digital Ocean Kubernetes Cluster
 
-Here are steps:
+Here are the steps:
 
-## 1. Creating Kuberenets Cluster
+## 1. Creating Kubernetes Cluster
 
-First I create a Kubernetes cluster by refering this atricle https://docs.digitalocean.com/products/kubernetes/quickstart/
+First, I created a Kubernetes cluster by referring to this article https://docs.digitalocean.com/products/kubernetes/quickstart/
 
-After that I connected the cluster in my local machine so that I can start the Harbor installtion process
+![12.PNG](images/12.PNG)
 
-I ran the following command to get the nodes:
+Once cluster is ready, I downloaded the cluster configuration from the console and added that in my local machine's .kube directory by running this command.
 
-``` kubectl get nodes ```
+![13.PNG](images/13.PNG)
+
+```cd ~/.kube && kubectl --kubeconfig="k8s-1-21-5-do-0-blr1-1640959937409-kubeconfig.yaml" get nodes```
+
+The above command will show the node available in the cluster.
 
 ![1.PNG](images/1.PNG)
 
@@ -19,7 +23,7 @@ I ran the following command to get the nodes:
 ```helm repo add bitnami https://charts.bitnami.com/bitnami```
 
 ![2.PNG](images/2.PNG)
-I used bitnami helm charts for the installation, but before taht I created ```harbor-values.yaml``` with following values:
+I used bitnami helm charts for the installation, but before that I created ```harbor-values.yaml``` with following values:
 
 ```
 externalURL: https://hub.prateekjain.dev
@@ -32,7 +36,7 @@ Other values I kept as it is.
 Now we are ready to install the chart. For that just run these commands:
 ![3.PNG](images/3.PNG)
 
-## 3. Check the namespace, services and pods
+## 3. Check the namespace, services, and pods
 
 After running the above command I waited for sometime and then ran the following command to check the objects
 
@@ -56,7 +60,7 @@ After running the above command I waited for sometime and then ran the following
 
 # 4. Adding DNS record
 
-For accessing the registry over domain, I have added the IP of loadbalancer for my domain i.e. https://hub.prateekjain.dev
+For accessing the registry over a domain, I have added the IP of load balancer for my domain i.e. https://hub.prateekjain.dev
 
 # 5. Login to the Harbor
 
