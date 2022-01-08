@@ -16,9 +16,10 @@ Once cluster is ready, I downloaded the cluster configuration from the console a
 
 The above command will show the node available in the cluster.
 
-After checking the cluster nodes I added the cluster configuration in the default location ```~/.kube/config```.
 
 ![1.PNG](images/1.PNG)
+
+After checking the cluster nodes I added the cluster configuration in the default location ```~/.kube/config```.
 
 ## 2. Install Helm Chart
 
